@@ -61,35 +61,35 @@ elif args.command == 'list':
     troskovi = lista_troskova()
     print(f"ID DATUM OPSI KOLICINA KATEGORIJA")
     for e in troskovi:
-        print(f"{e['id']:>3} {e[datum]} {e[opis]:<13} {e[kolicina]:<8.2f} {e[kategorija]}")
+        print(f"{e['id']:>3} {e['datum']} {e['opis']:<13} {e['kolicina']:<8.2f} {e['kategorija']}")
 
 elif args.command == 'delete':
     obrisi_trosak(args.id)
     print(f"Trosak je uspesno obrisan!")
 
-elif args.komanda == 'update':
+elif args.command == 'update':
     azuriraj_troskove(args.id, args.opis, args.kolicina, args.kategorija)
     print("Trošak uspešno ažuriran.")
 
-elif args.komanda == 'summary':
+elif args.command == 'summary':
     ukupno = sumarizacija(args.mesec)
     if args.mesec:
         print(f"Ukupni troskovi za mesec {args.mesec}: {ukupno} RSD")
     else:
         print(f"Ukupni troskovi: {ukupno} RSD")
 
-elif args.komanda == 'set-budget':
+elif args.command == 'set-budget':
     postavi_budzet(args.mesec, args.kolicina)
     print(f"Budzet za mesec {args.mesec} postavljen na {args.kolicina} RSD")
 
-elif args.komanda == 'budget-status':
+elif args.command == 'budget-status':
     potroseno, budzet = status_budzet(args.mesec)
     print(f"Potroseno je: {potroseno} RSD")
     print(f"Budzet: {budzet} RSD")
     print(f"Preostalo: {budzet - potroseno} RSD")
 
-elif args.komanda == 'export':
-    export_to_csv(args.fajl)
+elif args.command == 'export':
+    export_to_csv(args.fajl) 
     print(f"Podaci izvezeni u fajl: {args.fajl}")
 
 else:

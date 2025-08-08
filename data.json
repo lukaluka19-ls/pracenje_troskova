@@ -1,0 +1,14 @@
+{
+  "troskovi": [
+    {
+      "id": 1,
+      "datum": "2025-08-09",
+      "opis": "Kafa",
+      "kolicina": 150.0,
+      "kategorija": "Hrana"
+    }
+  ],
+  "budzet": {
+    "2025-08": 10000.0
+  }
+}
